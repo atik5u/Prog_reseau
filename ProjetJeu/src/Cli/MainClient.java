@@ -11,17 +11,17 @@ public class MainClient {
 			PrintWriter out = new PrintWriter(s.getOutputStream(), true);
 			new ListeningThread(s).start();
 			System.out.println("Connexion reussie!");
-			Scanner sc=new Scanner(System.in);
-			String message="";
-			while (message!="quit") {
-			message=sc.nextLine();
-			out.println(message);
+			Scanner sc = new Scanner(System.in);
+			String message = "";
+			while (message != "quit") {
+				message = sc.nextLine();
+				out.println(message);
 			}
 			sc.close();
 			s.close();
-			} catch(Exception e) {
+		} catch (Exception e) {
 			// Traitement d'erreur
-			}
+		}
 
 	}
 }

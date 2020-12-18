@@ -7,7 +7,6 @@ import java.net.Socket;
 
 public class ListeningThread extends Thread{
 	BufferedReader in;
-	BufferedReader in2;
 	
 	public ListeningThread(Socket s) throws IOException {
 		in = new BufferedReader(new InputStreamReader(s.getInputStream()));
@@ -18,6 +17,8 @@ public class ListeningThread extends Thread{
 		while (true) {
 			System.out.println(in.readLine());
 		}
-		}catch (IOException e) {};
+		}catch (IOException e) {
+			System.out.println("Listening thred ne marche pas");
+		};
 	}
 }
